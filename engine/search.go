@@ -1,8 +1,9 @@
 package engine
 
 import (
-	. "github.com/David-Orson/casperin/backend"
 	"sort"
+
+	. "github.com/David-Orson/casperin/backend"
 )
 
 const MaxUint = ^uint(0)
