@@ -2,6 +2,7 @@ package engine
 
 import . "github.com/David-Orson/casperin/backend"
 import . "github.com/David-Orson/casperin/evaluation"
+import . "github.com/David-Orson/casperin/utils"
 
 const MinSpecialMoveValue = 1499
 const MaxBadCapture = -100000 + 2500 // 2500 represents max mvvlva value
@@ -50,7 +51,7 @@ func (mv *MoveEvaluator) Update(pos *Position, moves []Move, bestMove Move, dept
 		}
 		mv.CounterMoves[side][pos.LastMove.From()][pos.LastMove.To()] = bestMove
 	}
-	bonus := min(depth*depth, HistoryMax)
+	bonus := Min(depth*depth, HistoryMax)
 
 	for _, move := range moves {
 		if move == bestMove {
