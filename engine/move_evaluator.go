@@ -4,6 +4,7 @@ import . "github.com/David-Orson/casperin/backend"
 import . "github.com/David-Orson/casperin/evaluation"
 
 const MinSpecialMoveValue = 1499
+const MaxBadCapture = -100000 + 2500 // 2500 represents max mvvlva value
 
 const HistoryMax = 400
 const HistoryMultiplier = 32
