@@ -4,8 +4,6 @@ import "github.com/David-Orson/casperin/backend"
 import "unsafe"
 import . "github.com/David-Orson/casperin/utils"
 
-const maxValue = Mate
-
 const NoneDepth = -6
 
 var GlobalTransTable TranspositionTable
