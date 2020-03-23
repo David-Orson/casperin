@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	. "github.com/David-Orson/casperin/backend"
+	. "github.com/David-Orson/casperin/utils"
 )
 
 // From zurichess
