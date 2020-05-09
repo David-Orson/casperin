@@ -1,13 +1,17 @@
 package engine
 
-import "context"
-import "errors"
-import "runtime"
-import "github.com/David-Orson/casperin/backend"
-import "github.com/David-Orson/casperin/evaluation"
-import "github.com/David-Orson/casperin/transposition"
-import "github.com/David-Orson/casperin/fathom"
-import . "github.com/David-Orson/casperin/utils"
+import (
+	"context"
+	"errors"
+	"runtime"
+
+	"github.com/David-Orson/casperin/backend"
+	"github.com/David-Orson/casperin/evaluation"
+	"github.com/David-Orson/casperin/fathom"
+	"github.com/David-Orson/casperin/transposition"
+
+	. "github.com/David-Orson/casperin/utils"
+)
 
 const MAX_HEIGHT = 127
 const STACK_SIZE = MAX_HEIGHT + 1
@@ -32,7 +36,7 @@ type Engine struct {
 
 type thread struct {
 	engine *Engine
-	MoveEvaluator
+	MoveHistory
 	nodes int
 	stack [STACK_SIZE]StackEntry
 }
@@ -62,10 +66,10 @@ type SearchInfo struct {
 }
 
 type StackEntry struct {
-	position backend.Position
+	MoveProvider
 	PV
-	moves                [MAX_MOVES]backend.EvaledMove
 	quietsSearched       [MAX_MOVES]backend.Move
+	position             backend.Position
 	evaluation           int16
 	evaluationCalculated bool
 }
@@ -160,7 +164,7 @@ func (e *Engine) NewGame() {
 	transposition.GlobalTransTable = transposition.NewTransTable(e.Hash.Val)
 	e.threads = make([]thread, e.Threads.Val)
 	for i := range e.threads {
-		e.threads[i].MoveEvaluator = MoveEvaluator{}
+		e.threads[i].MoveHistory = MoveHistory{}
 		e.threads[i].engine = e
 	}
 	transposition.GlobalPawnKingTable = transposition.NewPKTable(e.PawnHash.Val)
