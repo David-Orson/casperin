@@ -1,19 +1,20 @@
 package main
 
 import (
-	"github.com/David-Orson/casperin/engine"
-	"github.com/David-Orson/casperin/evaluation"
-	"github.com/David-Orson/casperin/uci"
 	"os"
+
+	"github.com/David-Orson/casperin/engine"
+	"github.com/David-Orson/casperin/tuning"
+	"github.com/David-Orson/casperin/uci"
 )
 
 func main() {
 	if len(os.Args) > 1 {
 		switch os.Args[1] {
 		case "tune":
-			evaluation.Tune()
+			tuning.Tune()
 		case "trace-tune":
-			evaluation.TraceTune()
+			tuning.TraceTune()
 		case "bench":
 			engine.Benchmark()
 		}
