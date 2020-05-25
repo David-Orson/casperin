@@ -13,7 +13,6 @@ import (
 
 	. "github.com/David-Orson/casperin/backend"
 	. "github.com/David-Orson/casperin/evaluation"
-	"github.com/David-Orson/casperin/transposition"
 	. "github.com/David-Orson/casperin/utils"
 )
 
@@ -154,7 +153,6 @@ func TraceTune() {
 	t.bestWeights = make([]weight, len(t.weights))
 	copy(t.bestWeights, t.weights)
 
-	transposition.GlobalPawnKingTable = &emptyPKTableType{}
 	inputChan := make(chan string)
 	go loadEntries(inputChan)
 	var thread thread
