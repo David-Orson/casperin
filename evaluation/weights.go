@@ -2,6 +2,7 @@ package evaluation
 
 import (
 	. "github.com/David-Orson/casperin/backend"
+	. "github.com/David-Orson/casperin/utils"
 )
 
 var PawnValue = S(79, 166)

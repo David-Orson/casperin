@@ -2,6 +2,7 @@ package evaluation
 
 import (
 	. "github.com/David-Orson/casperin/backend"
+	"github.com/David-Orson/casperin/registeel"
 	. "github.com/David-Orson/casperin/utils"
 )
 
@@ -434,6 +435,7 @@ func evaluateKingPawns(pos *Position) Score {
 }
 
 type EvaluationContext struct {
+	registeel.RegisteelNetwork
 	contempt Score
 }
 
@@ -1389,6 +1391,8 @@ func (ec *EvaluationContext) Evaluate(pos *Position) int {
 		}
 		score += S(0, int16(sign*Max(int(complexity.End()), -Abs(int(score.End())))))
 	}
+
+	score += ec.CorrectEvaluation(pos)
 
 	// Scale Factor inlined
 	scale := ScaleNormal

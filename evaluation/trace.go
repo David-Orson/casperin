@@ -1,6 +1,9 @@
 package evaluation
 
-import . "github.com/David-Orson/casperin/backend"
+import (
+	. "github.com/David-Orson/casperin/backend"
+	. "github.com/David-Orson/casperin/utils"
+)
 
 type Trace struct {
 	PawnValue                     int
