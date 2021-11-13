@@ -1,7 +1,7 @@
 package evaluation
 
 import (
-	. "github.com/David-Orson/casperin/backend"
+	. "github.com/David-Orson/casperin/chess"
 	"github.com/David-Orson/casperin/registeel"
 	. "github.com/David-Orson/casperin/utils"
 )

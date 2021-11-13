@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	. "github.com/David-Orson/casperin/backend"
+	. "github.com/David-Orson/casperin/chess"
 )
 
 func TestWAC(t *testing.T) {

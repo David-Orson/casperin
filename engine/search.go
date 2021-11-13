@@ -6,7 +6,7 @@ import (
 	"math/rand"
 	"sync"
 
-	. "github.com/David-Orson/casperin/backend"
+	. "github.com/David-Orson/casperin/chess"
 	. "github.com/David-Orson/casperin/evaluation"
 	"github.com/David-Orson/casperin/fathom"
 	"github.com/David-Orson/casperin/transposition"

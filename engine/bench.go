@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	. "github.com/David-Orson/casperin/backend"
+	. "github.com/David-Orson/casperin/chess"
 )
 
 type positionTest struct {

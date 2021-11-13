@@ -5,7 +5,7 @@ import (
 	"math"
 	"time"
 
-	. "github.com/David-Orson/casperin/backend"
+	. "github.com/David-Orson/casperin/chess"
 	. "github.com/David-Orson/casperin/utils"
 )
 

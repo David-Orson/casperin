@@ -1,7 +1,9 @@
 package evaluation
 
-import . "github.com/David-Orson/casperin/backend"
-import . "github.com/David-Orson/casperin/utils"
+import (
+	. "github.com/David-Orson/casperin/chess"
+	. "github.com/David-Orson/casperin/utils"
+)
 
 var SEEValues = [...]int{100, 450, 450, 675, 1300, Mate / 2, 0}
 
